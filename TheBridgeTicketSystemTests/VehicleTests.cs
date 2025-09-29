@@ -121,7 +121,7 @@ namespace TheBridgeTicketSystemTests
             var mc = new MC();
 
             // Act
-            var vehicle = mc.Vehicle();
+            var vehicle = mc.VehicleType();
 
             // Assert
             Assert.AreEqual("MC", vehicle);
