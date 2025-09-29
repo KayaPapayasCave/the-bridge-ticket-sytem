@@ -1,4 +1,4 @@
-﻿namespace Car
+﻿namespace VehicleCar
 {
     /// <summary>
     /// This is a public car class.
