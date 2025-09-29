@@ -11,10 +11,24 @@ namespace VehicleBase
     /// </summary>
     public abstract class Vehicle
     {
+        private string licensePlate;
+
         /// <summary>
-        /// Public property of the licenseplate of the vehicle.
+        /// Public property of the license plate of the vehicle.
+        /// The license plate of the vehicle can't be longer than 7 characters!
         /// </summary>
-        public string LicensePlate { get; set; }
+        public string LicensePlate
+        {
+            get => licensePlate;
+            set
+            {
+                if (value.Length > 7)
+                {
+                    throw new ArgumentException("License plate can't be longer than 7 characters!");
+                }
+                licensePlate = value;
+            }
+        }
 
         /// <summary>
         /// Public property of the date.

@@ -64,6 +64,17 @@ namespace TheBridgeTicketSystemTests
             // Assert
             Assert.AreEqual("Car", vehicleType);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CarLicensePlate_ShouldThrowException_LongerThan7Characters()
+        {
+            // Arrange
+            var car = new Car();
+
+            // Act
+            car.LicensePlate = "AB123456";
+        }
     }
 
     [TestClass]
@@ -75,7 +86,7 @@ namespace TheBridgeTicketSystemTests
         {
             // Arrange
             var mc = new MC();
-            var mclPlate = "AB12345";
+            var mclPlate = "XY12345";
 
             // Act
             mc.LicensePlate = mclPlate;
@@ -125,6 +136,17 @@ namespace TheBridgeTicketSystemTests
 
             // Assert
             Assert.AreEqual("MC", vehicle);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void MCLicensePlate_ShouldThrowException_LongerThan7Characters()
+        {
+            // Arrange
+            var mc = new MC();
+
+            // Act
+            mc.LicensePlate = "XY123456";
         }
     }
 }
