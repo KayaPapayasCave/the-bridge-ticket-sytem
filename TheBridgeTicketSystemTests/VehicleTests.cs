@@ -1,4 +1,5 @@
-﻿using VehicleCar;
+﻿using StoreBaeltTicketLibrary;
+using VehicleCar;
 using VehicleMC;
 
 namespace TheBridgeTicketSystemTests
@@ -199,6 +200,44 @@ namespace TheBridgeTicketSystemTests
 
             // Assert
             Assert.AreEqual(108, price, 0.001);
+        }
+    }
+
+    [TestClass]
+    public class StoreBaeltCarTests
+    {
+        [TestMethod]
+        public void CarPrice_ShouldApplyWeekendDiscount_WhenSaturday()
+        {
+            // Arrange
+            var car = new StoreBaeltCar
+            {
+                Date = new DateTime(2025, 10, 4),
+                Brobizz = false
+            };
+
+            // Act
+            var price = car.Price();
+
+            // Assert
+            Assert.AreEqual(195.5, price, 0.01);
+        }
+
+        [TestMethod]
+        public void CarPrice_ShouldApplyWeekendAndBrobizzDiscount_WhenSundayWithBrobizz()
+        {
+            // Arrange
+            var car = new StoreBaeltCar
+            {
+                Date = new DateTime(2025, 10, 5),
+                Brobizz = true
+            };
+
+            // Act
+            var price = car.Price();
+
+            // Assert
+            Assert.AreEqual(175.95, price, 0.01);
         }
     }
 }
