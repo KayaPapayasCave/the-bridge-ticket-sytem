@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bridge</name>
+    </assembly>
+    <members>
+        <member name="T:VehicleCar.Car">
+            <summary>
+            This is a public car class.
+            </summary>
+        </member>
+        <member name="T:VehicleMC.MC">
+            <summary>
+            This is a public MC class.
+            </summary>
+        </member>
+        <member name="M:VehicleMC.MC.VehicleType">
+            <summary>
+            A method that returns the type of the MC.
+            </summary>
+            <returns>The type MC as the string "MC".</returns>
+        </member>
+        <member name="T:VehicleBase.Vehicle">
+            <summary>
+            Abstract base class for all vehicles.
+            </summary>
+        </member>
+        <member name="P:VehicleBase.Vehicle.LicensePlate">
+            <summary>
+            Public property of the license plate of the vehicle.
+            The license plate of the vehicle can't be longer than 7 characters!
+            </summary>
+        </member>
+        <member name="P:VehicleBase.Vehicle.Date">
+            <summary>
+            Public property of the date.
+            </summary>
+        </member>
+        <member name="P:VehicleBase.Vehicle.Brobizz">
+            <summary>
+            True if Brobizz is used, otherwise false.
+            </summary>
+        </member>
+        <member name="M:VehicleBase.Vehicle.Price">
+            <summary>
+            Abstract method to get the ticket price.
+            </summary>
+        </member>
+        <member name="M:VehicleBase.Vehicle.VehicleType">
+            <summary>
+            Abstract method to get the vehicle type.
+            </summary>
+        </member>
+    </members>
+</doc>
