@@ -1,4 +1,5 @@
-﻿using StoreBaeltTicketLibrary;
+﻿using Oresundbron;
+using StoreBaeltTicketLibrary;
 using VehicleCar;
 using VehicleMC;
 
@@ -238,6 +239,100 @@ namespace TheBridgeTicketSystemTests
 
             // Assert
             Assert.AreEqual(175.95, price, 0.01);
+        }
+    }
+
+    [TestClass]
+    public class OresundVehicleTests
+    {
+        [TestMethod]
+        public void OresundCarPrice_NoBrobizz()
+        {
+            // Arrange
+            var car = new OresundCar
+            {
+                Brobizz = false
+            };
+
+            // Act
+            var price = car.Price();
+
+            // Assert
+            Assert.AreEqual(460.0, price, 0.01);
+        }
+
+        [TestMethod]
+        public void OresundCarPrice_WithBrobizz()
+        {
+            // Arrange
+            var car = new OresundCar
+            {
+                Brobizz = true
+            };
+
+            // Act
+            var price = car.Price();
+
+            // Assert
+            Assert.AreEqual(178.0, price, 0.01);
+        }
+
+        [TestMethod]
+        public void OresundMCPrice_NoBrobizz()
+        {
+            // Arrange
+            var mc = new OresundMC
+            {
+                Brobizz = false
+            };
+
+            // Act
+            var price = mc.Price();
+
+            // Assert
+            Assert.AreEqual(235.0, price, 0.01);
+        }
+
+        [TestMethod]
+        public void OresundMCPrice_WithBrobizz()
+        {
+            // Arrange
+            var mc = new OresundMC
+            {
+                Brobizz = true
+            };
+
+            // Act
+            var price = mc.Price();
+
+            // Assert
+            Assert.AreEqual(92.0, price, 0.01);
+        }
+
+        [TestMethod]
+        public void OresundCarVehicleType_ReturnsCorrectString()
+        {
+            // Arrange
+            var car = new OresundCar();
+
+            // Act
+            var vehicleType = car.VehicleType();
+
+            // Assert
+            Assert.AreEqual("Oresund car", vehicleType);
+        }
+
+        [TestMethod]
+        public void OresundMCVehicleType_ReturnsCorrectString()
+        {
+            // Arrange
+            var mc = new OresundMC();
+
+            // Act
+            var vehicleType = mc.VehicleType();
+
+            // Assert
+            Assert.AreEqual("Oresund MC", vehicleType);
         }
     }
 }
