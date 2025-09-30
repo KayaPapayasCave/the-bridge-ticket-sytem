@@ -9,7 +9,12 @@ namespace VehicleMC
     {
         public override double Price()
         {
-            return 120;
+            double basePrice = 120;
+            if (Brobizz)
+            {
+                return basePrice * 0.9;
+            }
+            return basePrice;
         }
 
         /// <summary>

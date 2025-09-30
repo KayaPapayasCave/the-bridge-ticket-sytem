@@ -36,6 +36,11 @@ namespace VehicleBase
         public DateTime Date { get; set; }
 
         /// <summary>
+        /// True if Brobizz is used, otherwise false.
+        /// </summary>
+        public bool Brobizz { get; set; }
+
+        /// <summary>
         /// Abstract method to get the ticket price.
         /// </summary>
         public abstract double Price();

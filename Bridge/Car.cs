@@ -9,7 +9,12 @@ namespace VehicleCar
     {
         public override double Price()
         {
-            return 230;
+            double basePrice = 230;
+            if (Brobizz)
+            {
+                return basePrice * 0.9;
+            }
+            return basePrice;
         }
 
         public override string VehicleType()

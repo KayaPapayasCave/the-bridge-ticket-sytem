@@ -75,6 +75,32 @@ namespace TheBridgeTicketSystemTests
             // Act
             car.LicensePlate = "AB123456";
         }
+
+        [TestMethod]
+        public void CarPrice_ShouldReturn230_WhenNoBrobizzUsed()
+        {
+            // Arrange
+            var car = new Car { Brobizz = false };
+
+            // Act
+            var price = car.Price();
+
+            // Assert
+            Assert.AreEqual(230, price, 0.001);
+        }
+
+        [TestMethod]
+        public void CarPrice_ShouldReturn207_WhenBrobizzUsed()
+        {
+            // Arrange
+            var car = new Car { Brobizz = true };
+
+            // Act
+            var price = car.Price();
+
+            // Assert
+            Assert.AreEqual(207, price, 0.001);
+        }
     }
 
     [TestClass]
@@ -147,6 +173,32 @@ namespace TheBridgeTicketSystemTests
 
             // Act
             mc.LicensePlate = "XY123456";
+        }
+
+        [TestMethod]
+        public void MCPrice_ShouldReturn120_WhenNoBrobizzUsed()
+        {
+            // Arrange
+            var mc = new MC { Brobizz = false };
+
+            // Act
+            var price = mc.Price();
+
+            // Assert
+            Assert.AreEqual(120, price, 0.001);
+        }
+
+        [TestMethod]
+        public void MCPrice_ShouldReturn108_WhenBrobizzUsed()
+        {
+            // Arrange
+            var mc = new MC { Brobizz = true };
+
+            // Act
+            var price = mc.Price();
+
+            // Assert
+            Assert.AreEqual(108, price, 0.001);
         }
     }
 }
